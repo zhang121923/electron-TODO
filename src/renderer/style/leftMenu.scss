@@ -1,0 +1,135 @@
+@import "consts";
+
+.left-menu {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+
+  .menu {
+    list-style: none;
+    padding-inline-start: 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+
+    @each $c in $menuItemBg {
+      $i: index($menuItemBg, $c);
+      li:nth-of-type(#{$i}) {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        padding: 1px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        color: #b3b3b3;
+        cursor: pointer;
+
+        .user-info {
+          width: calc(100% - 5px);
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 10px 10px;
+
+          .user-icon {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ffffff;
+
+            img {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              border-radius: 50%;
+            }
+          }
+
+          .user-desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin-left: 10px;
+
+            .user-desc-name {
+              color: #636363;
+            }
+          }
+        }
+
+        .left-menu-route {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          text-decoration: none;
+          color: #737373;
+
+          i {
+            margin-left: 10px;
+          }
+        }
+
+        .right-corner-mark {
+          position: absolute;
+          right: 20px;
+          bottom: 10px;
+        }
+      }
+
+      @if $i > 1 {
+        li:nth-of-type(#{$i}) {
+          .left-menu-route {
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 5px;
+              height: 100%;
+              background-color: #ffffff;
+            }
+
+            &:hover {
+              background-color: #EAEAEA;
+
+              &::before {
+                background-color: $c;
+              }
+
+              i, label {
+                color: $c;
+              }
+            }
+          }
+
+          .left-menu-route-selected {
+            &::before {
+              background-color: $c;
+            }
+
+            i, label {
+              color: $c;
+            }
+          }
+
+          label {
+            cursor: pointer;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // hr分割线
+  .menu-seperate {
+    width: 90%;
+    border-color: #fffaf0;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "../dist/main",
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "typeRoot": [
+      "../node_modules/@types"
+    ],
+    "lib": [
+      "es2015"
+    ]
+  },
+  "exclude": [
+    "renderer",
+    "node_modules"
+  ]
+}

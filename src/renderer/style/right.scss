@@ -1,0 +1,46 @@
+@import "consts";
+
+@media screen and (max-width: 780px) {
+  .right-area {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .right-area {
+    width: calc(100% - 280px);
+    height: 100%;
+  }
+}
+
+.right-area {
+
+  .right-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 60px 20px 20px 20px;
+  }
+
+  @for $index from 1 through 5 {
+    @if $index == 1 {
+      .right-content-item#{$index} {
+        background-image: url("../assets/bg.jpg");
+        background-size: cover;
+        background-clip: border-box;
+        background-repeat: no-repeat;
+      }
+    } @else {
+      .right-content-item#{$index} {
+        background-color: nth($menuItemBg, $index + 1);
+      }
+    }
+
+    .right-content-item#{$index} {
+      width: calc(100% - 40px);
+      height: calc(100% - 60px - 20px);
+    }
+
+  }
+}

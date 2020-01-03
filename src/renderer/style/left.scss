@@ -1,0 +1,15 @@
+@import "consts";
+
+@media screen and (max-width: 780px) {
+  .left-area {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .left-area {
+    display: block;
+    width: 280px;
+    height: 100%;
+  }
+}
