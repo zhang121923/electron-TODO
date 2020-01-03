@@ -10,7 +10,7 @@ let win;
 
 const createWindow = () => {
     win = new BrowserWindow({
-        title: 'test-TODO',
+        title: 'electron-TODO',
         icon: 'favicon.ico',
         width: 800,
         height: 600,
